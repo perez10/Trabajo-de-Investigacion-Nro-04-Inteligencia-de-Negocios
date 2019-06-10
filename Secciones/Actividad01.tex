@@ -7,166 +7,207 @@ Balanced Scorecard and Business model canvas are business analysis techniques. B
 \newpage
 
 \section{Introduccion}
-Esta metodología deriva de la gestión estratégica de empresas y presupone una elección de indicadores que no debe ser restringida al área económico – financiera. Así como no es posible comandar un avión controlando apenas la velocidad, los indicadores financieros no son suficientes para garantizar que una empresa se dirija en la dirección correcta. Por estos motivos, será necesario monitorear, junto a los indicadores económicos –financieros, el desempeño de mercado, los procesos internos, la innovación y la tecnología. De este modo, los resultados financieros serán fruto de la sumatoria de acciones generadas por personas a través del uso de las mejores tecnologías, vinculación a las mejores prácticas y los procesos internos de la organización, todo esto en armoníacon la Propuesta de Valor ofrecida al cliente. Esto proceso se denomina "crear valor através de activos intangibles"
+En la actualidad, las tecnologías de la información han automatizado los procesos de carácter típicamente repetitivo o administrativo, haciendo uso de lo que se denomina sistemas de información operacionales. Dichos sistemas resuelven las necesidades de funcionamiento de la empresa, donde sus principales características son la actualización y el tiempo de respuesta. 
+
+Las necesidades informacionales (necesidades de funcionamiento de la empresa), son aquellas que tienen por objeto obtener la información necesaria, que sirva de base para la toma de decisiones tanto a escala estratégica como táctica. Estas necesidades se basan en gran medida en el análisis de un número ingente de datos, en el que es tan importante el obtener un valor muy detallado de negocio como el valor totalizado para el mismo. Así también, es fundamental la visión histórica de todas las variables analizadas, y el análisis de los datos del entorno. 
+
+Cualquier actividad que realiza la empresa está reflejada de forma minuciosa en sus bases de datos, por lo tanto, esto puede derivarnos en diferentes problemas de tipo informacional. En primer lugar, al realizar consultas masivas de información, se puede ver perjudicado el nivel de servicio del resto de sistemas, dado que las consultas de las que estamos hablando, suelen ser bastante costosas en recursos. Dichas necesidades se ven insatisfechas por la limitada flexibilidad a la hora de navegar por la información y a su inconsistencia debido a la falta de una visión global En esta situación, el siguiente paso evolutivo ha venido siendo la generación de un entorno gemelo del operativo, que se ha denominado comúnmente Centro de Información. 
 
 \begin{center}
-\includegraphics[width=10cm]{./Imagenes/imagen5}
+\includegraphics[width=16cm]{./Imagenes/image003}
 \end{center}
 
-Balanced Scorecard ofrece una visión integrada y balanceada de la empresa y permite desarrollar la estrategia en forma clara. Esto se logra a través de objetivos estratégicos identificados en 4 perspectivas: financiera, clientes, procesos internos yaprendizaje e innovación. Cada una de las perspectivas se vincula con las demás mediante relaciones de causa y efecto. BSC promueve, además, el alineamiento de losobjetivos estratégicos con indicadores de desempeño, metas y planes de acción para hacer posible la generación de estrategias en forma integrada y garantizar que los esfuerzos de la organización se encuentren en línea con las mismas.
+
 \newpage
 
 
-\section{Balanced Scorecard}
-\item{El Balanced Scorecard (BSC) o Cuadro de Mando Integral (CMI) es una herramienta de gestión que permite implementar la estrategia de una empresa a partir de una serie de medidas de actuación, permitiendo un control permanente sobre todos los factores de la organización, interrelacionando objetivos y relacionándolos con acciones concretas.}
+\section{METODOLOGÍA INMON VS METODOLOGÍA KIMBALL}
 
+
+\section{METODOLOGÍA INMON}
+\section{Historia}
+1990 publica Building the Data Warehouse y en 2002 mejora su libro y define una arquitectura como una colección de fuentes dispares en almacenes de datos y variantes en el tiempo.
+\section{Concepto}
+Bill Inmon es considerado el padre del concepto Data Warehouse, el menciona que un Data Warehouse debe cumplir con las siguientes \section{características:}
+•	Dirigido a un área. Datos sobre un área específica en lugar de operaciones de la compañía\\
+•	Integrado. Unión de diferentes fuentes de datos de manera coherente.\\
+•	Variable en el tiempo. Todos los datos pertenecen a un periodo de tiempo determinado.\\
+•	No volátil. Los datos no son eliminados.\\
+La metodología que Bill Inmon propone es iterativa la cual sigue un esquema contrario al clásico de desarrollo de sistemas ya que lo primero con lo que se trabaja son datos, estos se integran para ser probados y programar de acuerdo con ellos para analizar los resultados y de esta manera comprender los requerimientos. 
+La información ha de estar a los máximos niveles de detalle. Los Dw departamentales o Data Marts son tratados como subconjuntos de este Dw corporativo, que son construidos para cubrir las necesidades individuales de análisis de cada departamento, y siempre a partir de este Dw Central (del que también se pueden construir los ODS (Operacional Data Stores) o similares).\\
 \begin{center}
-\includegraphics[width=15cm]{./Imagenes/imagen1}
+\includegraphics[width=16cm]{./Imagenes/image003}
+\end{center}
+ 
+El enfoque Inmon también se referencia normalmente como Top-Down. Los datos son extraídos de los sistemas operacionales por los procesos ETL y cargados en las áreas de stage, donde son validados y consolidados en el DW corporativo, donde además existen los llamados metadatos que documentan de una forma clara y precisa el contenido del DW. Una vez realizado este proceso, los procesos de refresco de los Data Marts departamentales obtienen la información de él, y con las consiguientes transformaciones, organizan los datos en las estructuras particulares requeridas por cada uno de ellos, refrescando su contenido.\\
+Dentro de esta metodología se menciona que la construcción de toda la arquitectura de un Data Warehouse toma bastante tiempo, puesto que su desarrollo inicial está relacionado con necesidades genéricas empresariales, a lo largo del tiempo este tipo de necesidades son cubiertas por el Data Warehouse para más personas por lo que la demanda del uso del Data Warehouse aumenta y esto hace que el performance se vea afectado. Es por esto que al llegar a este punto se comienzan a construir segmentos del Data Warehouse que se alimentaran del Data Warehouse y que permitirán tener la información almacenada de manera que esta vaya dirigida a departamentos, con esto se logra disminuir la demanda sobre el Data Warehouse debido a que por ejemplo para estos momentos en lugar de tener a 100 usuarios requiriendo de manera directa los servicios del Data Warehouse tendré 5 departamentos.
+
+\section{Data Warehouse}
+Un data warehouse es donde se concentrar todos los datos con un diseño especial para explotar información. Se componen por fragmentos derivados del DATA WHAREHOUSE conocidos como DATAMARTS.
+Normalmente, un data warehouse se aloja en un servidor corporativo o cada vez más, en la nube. Los datos de diferentes aplicaciones de procesamiento de transacciones Online (OLTP) y otras fuentes se extraen selectivamente para su uso por aplicaciones analíticas y de consultas por usuarios.
+Data Warehouse es una arquitectura de almacenamiento de datos que permite a los ejecutivos de negocios organizar, comprender y utilizar sus datos para tomar decisiones estratégicas. Un data warehouse es una arquitectura conocida ya en muchas empresas modernas.
+ 
+ \begin{center}
+\includegraphics[width=12cm]{./Imagenes/image005}
 \end{center}
 
-\section{¿Cómo funciona el Balanced Scorecard?}
-\item{El proceso de creación de un BSC comienza con la determinación de los siguientes parámetros:\\\\
--Objetivos a alcanzar por la organización.\\
--Indicadores o mediciones más adecuados para poder controlar el grado de alance de los objetivos.\\
--Metas concretas en relación a los resultados específicos de dichas mediciones.\\
--Acciones, iniciativas proyectos o programas que se van a implementar para lograr dichas acciones.\\\\
-Una vez fijados todos estos factores, el siguiente paso es colocar todas estas mediciones, metas y objetivos en un panel o cuadro, utilizando para ellos un software específico donde se monitorea el progreso de cada uno de ellos.\\
-Los datos, que normalmente se obtienen de los sistemas informáticos de la empresa, se presentan de manera esquemática y muy gráfica en un panel similar al que utilizan los pilotos de aviones, por lo que también se le conoce como «Cuadro de Mando Integral».}
+El DATA WAREHOUSE no es software, mucho menos una marca o una sola base de datos, en general podemos abstraernos de los modelos lógicos y físicos de la base de datos.
+ 
+\section{Estructuras de un Data Warehouse}
+La arquitectura de un data warehouse puede ser dividida en tres estructuras simplificadas: básica, básica con un área de ensayo y básica con área de ensayo y data Marts.\\
+•	Con una estructura básica, sistemas operativos y archivos planos proporcionan datos en bruto que se almacenan junto con metadatos. Los usuarios finales pueden acceder a ellos para su análisis, generación de informes y minería.\\
+•	Al añadir un área de ensayo que se puede colocar entre las fuentes de datos y el almacén, ésta proporciona un lugar donde los datos se pueden limpiar antes de entrar en el almacén. Es posible personalizar la arquitectura del almacén para diferentes grupos dentro de la organización.\\
+•	Se puede hacer agregando data Marts, que son sistemas diseñados para una línea de negocio en particular. Se pueden tener data Marts separados para ventas, inventario y compras, por ejemplo, y los usuarios finales pueden acceder a datos de uno o de todos los data Marts del departamento.\\
+\begin{center}
+\includegraphics[width=12cm]{./Imagenes/image007}
+\end{center}
+ 
+\section{Propósitos del Data Warehouse}
+•	Es enfocado a toda la empresa\\
+•	Debe ajustarse a los cambios\\
+•	Preparado para carga masiva de datos en un pequeño lapso de tiempo○\\
+•	Diseñado para el análisis de información\\
+•	No es conveniente que el data warehouse conviva en el mismo\\ ambiente que nuestros sistemas transaccionales como: ERP.\\
+•	La naturaleza del data warehouse debe ser multipropósito\\
 
-\section{Perspectivas del Balanced Scorecard}
-\item{A pesar de que son 4 las perspectivas que tradicionalmente identifican un BSC, no es indispensable que estén todas ellas; estas perspectivas son las más comunes y pueden adaptarse a la gran mayoría de las empresas, y no constituyen una condición indispensable para construir un modelo de negocios.\\\\\
+\section{Algunas Metodologías}
 
 \begin{center}
-\includegraphics[width=15cm]{./Imagenes/Imagen02}
+\includegraphics[width=16cm]{./Imagenes/image009}
+\end{center}
+\newpage
+\section{METODOLOGÍA DE KIMBALL}
+La Metodología Kimball, es una metodología empleada para la construcción de un almacén de datos (data warehouse, DW) que no es más que, una colección de datos orientada a un determinado ámbito (empresa, organización, etc.), integrado, no volátil y variable en el tiempo, que ayuda a la toma de decisiones en la entidad en la que se utiliza.\\
+La metodología se basa en lo que Kimball denomina Ciclo de Vida Dimensional del Negocio (Business Dimensional Lifecycle). Este ciclo de vida del proyecto de DW, está basado en cuatro principios básicos:\\
+•	Centrarse en el negocio\\
+•	Construir una infraestructura de información adecuada\\
+•	Realizar entregas en incrementos significativos (este principio consiste en crear el almacén de datos (DW) en incrementos entregables en plazos de 6 a 12 meses, en este punto, la metodología se parece a las metodologías ágiles de construcción de software)\\
+•	Ofrecer la solución completa (En este se punto proporcionan todos los elementos necesarios para entregar valor a los usuarios de negocios, para esto ya se debe tener un almacén de datos bien diseñado, se deberán entregar herramientas de consulta ad hoc, aplicaciones para informes y análisis avanzado, capacitación, soporte, sitio web y documentación).\\
+La construcción de una solución de DW/BI (Datawarehouse/Business Intelligence) es sumamente compleja, y Kimball nos propone una metodología que nos ayuda a simplificar esa complejidad. Las tareas de esta metodología (ciclo de vida) se describen a continuación:
+.\\\\\
+
+\begin{center}
+\includegraphics[width=15cm]{./Imagenes/image011}
 \end{center}
 
-\textbf{Perspectiva financiera}\\
-Históricamente los indicadores financieros han sido los más utilizados, pues son el reflejo de lo que está ocurriendo con las inversiones y el valor añadido económico, de hecho, todas las medidas que forman parte de la relación causa-efecto, culminan en la mejor actuación financiera.Información administrada por un sistema ERP.\\\\
-\textbf{Perspectiva del cliente}
-Como parte de un modelo de negocios, se identifica el mercado y el cliente hacia el cual se dirige el servicio o producto. La perspectiva del cliente es un reflejo del mercado en el cual se está compitiendo. Brinda información importante para generar, adquirir, retener y satisfacer a los clientes, obtener cuota de mercado, rentabilidad, etc. "La perspectiva del cliente permite a los directivos de unidades de negocio articular la estrategia de cliente basada en el mercado, que proporcionará unos rendimientos financieros futuros de categoría superior." (Kaplan & Norton).
-Información administrada por un sistema CRM o BPC.\\\\
-\textbf{Perspectiva procesos internos}\\
-Para alcanzar los objetivos de clientes y financieros es necesario realizar con excelencia ciertos procesos que dan vida a la empresa. Esos procesos en los que se debe ser excelente son los que identifican los directivos y ponen especial atención para que se lleven a cabo de una forma perfecta, y así influyan a conseguir los objetivos de accionistas y clientes.
-Información administrada por un sistema BPC o BPM.\\\\
-\textbf{Perspectiva de formación y crecimiento}\\
-Es la perspectiva donde más tiene que ponerse atención, sobre todo si piensan obtenerse resultados constantes a largo plazo. Aquí se identifica la infraestructura necesaria para crear valor a largo plazo. Hay que lograr formación y crecimiento en 3 áreas:\\ personas, sistemas y clima organizacional. Normalmente son intangibles, pues son identificadores relacionados con capacitación a personas, software o desarrollos, máquinas e instalaciones, tecnología y todo lo que hay que potenciar para alcanzar los objetivos de las perspectivas anteriores.
-Información administrada por un sistema ERP o BPC.}
+\section{1.1.PLANIFICACIÓN DEL PROYECTO}\\
+En este proceso se determina el propósito del proyecto de DW/BI,
+sus objetivos específicos y el alcance de este, los principales riesgos
+y una aproximación inicial a las necesidades de información.\\
+
+Esta tarea incluye las siguientes acciones típicas de un plan de proyecto:\\
+	Definir el alcance (entender los requerimientos del negocio).\\
+	Identificar las tareas\\
+	Programar las tareas\\
+	Planificar el uso de los recursos.\\
+	Asignar la carga de trabajo a los recursos\\
+	Elaboración de un documento final que representa un plan del proyecto.\\
+Además, en esta parte definimos cómo realizar la administración o gestión de esta subfase que es todo un proyecto en sí mismo, con las siguientes actividades:\\
+•	Monitoreo del estado de los procesos y actividades.\\
+•	Rastreo de problemas\\
+•	Desarrollo de un plan de comunicación comprensiva que direccione la empresa y las áreas de TI\\
+.\\\\
+\section{DEFINICIÓN DE REQUERIMIENTOS DEL NEGOCIO}
+CLa definición de requerimientos es un proceso de entrevistar al personal de negocio y técnico, aunque siempre conviene, tener un poco de preparación previa. En esta tarea, se debe aprender sobre el negocio, los competidores, la industria y los clientes de este. Se debe dar una revisión a todos los informes posibles de la organización; rastrear los documentos de estrategia interna; entrevistar a los empleados, analizar lo que se dice en la prensa acerca de la organización, la competencia y la industria y se deben conocer los términos y la terminología del negocio.\\
+
+Se sugiere entrevistar al personal que se encuentra en los cuatro grupos que se mencionan a continuación:\\
+•	El directivo responsable de tomar las decisiones estratégicas.\\
+•	Los administradores intermedios y de negocio responsables de explorar alternativas estratégicas y aplicar decisiones\\
+•	El personal de sistemas, si existe (estas son las personas que realmente saben qué tipos de problemas informáticos y de datos existen en la organización)\\
+•	El personal que se entrevista por razones políticas.\\
+Entre las tareas antes descritas, existe una flecha bidireccional, esto indica que los requerimientos del negocio son el soporte inicial de las tareas subsiguientes, también tiene influencia en el plan de proyecto.\\
+Si avanzamos por el camino central del diagraman, encontramos las tareas asociadas al área de Datos, en esta, diseñaremos e implementaremos el modelo dimensional, y desarrollaremos el subsistema de Extracción, Transformación y Carga (Extract, Transformation, and Load - ETL) para cargar el DW. Las tareas pertenecientes al área se describen a continuación:\\
+Si avanzamos por el camino central del diagraman, encontramos las tareas asociadas al área de Datos, en esta, diseñaremos e implementaremos el modelo dimensional, y desarrollaremos el subsistema de Extracción, Transformación y Carga (Extract, Transformation, and Load - ETL) para cargar el DW. Las tareas pertenecientes al área se describen a continuación.\\
+\\\\
+\section{MODELADO DIMENSIONAL}
+Es un proceso dinámico y altamente iterativo. Comienza con un modelo dimensional de alto nivel obtenido a partir de los procesos priorizados y descritos en la tarea anterior, y El proceso iterativo consiste en cuatro pasos:\\
+a)	Elegir el proceso de negocio: que consiste en, elegir el área a modelizar. Esta es una decisión de la dirección, y depende fundamentalmente del análisis de requerimientos y de los temas analíticos anotados en la etapa anterior.\\
+b)	Establecer el nivel de granularidad: La granularidad significa especificar el nivel de detalle. La elección de la granularidad depende de los requerimientos del negocio y lo que es posible a partir de los datos actuales. La sugerencia general es comenzar a diseñar el DW al mayor nivel de detalle posible, ya que se podrían realizar agrupamientos posteriores, al nivel deseado.\\
+c)	Elegir las dimensiones: Las dimensiones surgen naturalmente de las discusiones del equipo, y facilitadas por la elección del nivel de granularidad y de la matriz de procesos/dimensiones (que se realiza en la tarea 4.2) Las tablas de dimensiones tienen un conjunto de atributos (generalmente textuales) que brindan una perspectiva o forma de análisis sobre una medida en una tabla hechos. Una forma de identificar las tablas de dimensiones es que sus atributos son posibles candidatos para ser encabezado en los informes, tablas pivot, cubos, o cualquier forma de visualización, unidimensional o multidimensional.\\
+d)	Identificar medidas y las tablas de hechos: Este paso, consiste en identificar las medidas que surgen de los procesos de negocios. Una medida es un atributo (campo) de una tabla que se desea analizar, sumando o agrupando sus datos y usando los criterios de corte conocidos como dimensiones. Las medidas habitualmente se vinculan con el nivel de granularidad del punto 2, y se encuentran en tablas que denominamos tablas de hechos (fact en inglés). Cada tabla de hechos tiene como atributos una o más medidas de un proceso organizacional, de acuerdo a los requerimientos. Un registro contiene una medida expresada en números, como ser cantidad, tiempo, dinero, etc., sobre la cual se desea realizar una operación de agregación (promedio, conteo, suma, etc.) en función de una o más dimensiones. La granularidad, en este punto, es el nivel de detalle que posee cada registro de una tabla de hechos.\\
+\section{DISEÑO FÍSICO}
+En esta tarea, se contestan las siguientes preguntas:\\
+o	¿Cómo puede determinar cuán grande será el sistema de DW/BI?
+o	¿Cuáles son los factores de uso que llevarán a una configuración más grande y compleja?\\
+o	¿Cómo se debe configurar el sistema?\\
+o	¿Cuánta memoria y servidores se necesitan? ¿Qué tipo de almacenamiento y procesadores?\\
+o	¿Cómo instalar el software en los servidores de desarrollo, prueba y producción?\\
+o	¿Qué necesitan instalar los diferentes miembros del equipo de DW/BI en sus estaciones de trabajo?\\
+o	¿Cómo convertir el modelo de datos lógico en un modelo de datos físicos en la base de datos relacional?\\
+o	¿Cómo conseguir un plan de indexación inicial?\\
+o	¿Debe usarse la partición en las tablas relacionales?\\
+
+
 
 \begin{center}
 \includegraphics[width=15cm]{./Imagenes/imagen2}
 \end{center}
 
-\section{Beneficios}
-\item{El Balanced Scorecard induce una serie de resultados que favorecen la administración de la compañía, pero para lograrlo es necesario implementar la metodología y la aplicación para monitorear, y analizar los indicadores obtenidos del análisis. Entre otros podemos considerar las siguientes ventajas:\\\\
--Alineación de los empleados hacia la visión de la empresa.\\
--Comunicación hacia todo el personal de los objetivos y su cumplimiento.\\
--Redefinición de la estrategia en base a resultados.\\
--Traducción de la visión y estrategias en acción.\\
--Favorece en el presente la creación de valor futuro.\\
--Integración de información de diversas áreas de negocio.\\
--Capacidad de análisis.\\
--Mejoría en los indicadores financieros.\\
--Desarrollo laboral de los promotores del proyecto.}
+\section{DISEÑO E IMPLEMENTACIÓN DEL SUBSISTEMA DE EXTRACCIÓN, TRANSFORMACIÓN Y CARGA (ETL)}
+\item{El subsistema de Extracción, Transformación y Carga (ETL) es la base sobre la cual se alimenta el Data warehouse. Si se diseña adecuadamente, puede extraer los datos de los sistemas de origen de datos, aplicar diferentes reglas para aumentar la calidad y consistencia de estos, consolidar la información proveniente de distintos sistemas, y finalmente cargar (grabar) la información en el DW en un formato acorde para la utilización por parte de las herramientas de análisis.}
 
-\begin{center}
-\includegraphics[width=15cm]{./Imagenes/imagen3}
-\end{center}
 
-\section{Plan Estrategico}
-\item{Es un proceso sistematico de desarrollo e implementacion de planes para alcanzar metas, propositos y objetivos.}
 
-\item{ y debe:}
-- Ser capaz de alcanzar el objetivo deseado
-- Factible apropiada
-- Debe proporcionar una ventaja compettitiva
-- Capaz de adaptar a las situciones cambiantes
-- Medible en terminos de su efectividad
+\section{IMPLEMENTACIÓN}
+\item{La implementación representa la convergencia de la tecnología, los datos y las aplicaciones de usuarios finales accesible desde el escritorio del usuario del negocio. Existen varios factores extras que aseguran el correcto funcionamiento de todas estas piezas, entre ellos se encuentran la capacitación, el soporte técnico, la comunicación y las estrategias de feedback.}
 
-\section{Modelo Canvas}
+
+
+\section{MANTENIMIENTO Y CRECIMIENTO DEL DATA WAREHOUSE}
 \item{
-El modelo canvas es la herramienta para analizar y crear modelos de negocio de forma simplificada. Se visualiza de manera global en un lienzo dividido en los principales aspectos que involucran al negocio y gira entorno a la propuesta de valor que se ofrece.\\\\
-El modelo canvas se utiliza para pasar de idea a proyecto y plasmar nuestra idea en un modelo empresarial. Es un modelo “vivo”, es decir, que vamos modificando según se va desarrollando, vamos validando clientes, surgen nuevas ideas… por eso se utilizan post-its para completarlo.
+Para administrar el entorno del Data Warehouse existente es importante enfocarse en los usuarios de negocio, los cuales son el motivo de su existencia, además de gestionar adecuadamente las operaciones del Data Warehouse, medir y proyectar su éxito y comunicarse constantemente con los usuarios para establecer un flujo de retroalimentación, En esto consiste el Mantenimiento. Finalmente, es importante sentar las bases para el crecimiento y evolución del Data Warehouse en donde el aspecto clave es manejar el crecimiento y evolución de forma iterativa utilizando el Ciclo de Vida propuesto, y establecer las oportunidades de crecimiento y evolución en orden por nivel prioridad.
+Si avanzamos por el camino inferior del diagraman, encontramos las tareas asociadas al área Aplicaciones de Inteligencia de Negocios, en esta ruta se encuentran tareas en las que diseñamos y desarrollamos las aplicaciones de negocios para los usuarios finales. Las tareas pertenecientes al área se describen a continuación:
+
 }
 
-\section{Generar un modelo canvas}
+\section{ESPECIFICACIÓN DE APLICACIONES DE BI}
 \item{
-Muestra de manera lógica la interconexión entre los 9 aspectos básicos de un modelo de negocio. A continuación, mostramos cómo se debe completar un modelo canvas, en qué orden y qué significa cada apartado del lienzo.\\\\
-\textbf{1. Segmento de clientes}\\
-Detectar las necesidades del mercado, del cliente. Nuestro foco siempre es el cliente y debemos orientar el producto a sus necesidades y deseos.\\
-Para poder identificar a nuestro cliente debemos ponernos en su piel y analizar qué es lo que piensa, siente, ve, escucha, cuáles son sus problemas y los beneficios que le puede aportar nuestro producto/servicio.\\\\
-Debemos dar respuesta a:\\
-¿Para quién estamos creando valor?\\
-¿Quiénes son nuestros clientes más importantes?
-\\\\\textbf{2. Propuesta de valor}\\
-Es la pieza clave de todo el modelo de negocio. La propuesta de valor o ventaja competitiva es el motivo por el que el cliente nos va a comprar a nosotros y no a otro. Aquí se incluye lo que hace diferente e innovador a nuestro producto/servicio.\\
-Se puede innovar en diferentes aspectos como en el modelo de ingresos, alianzas empresariales, procesos productivos, entrega del producto/servicio, marca…\\\\
-Debemos dar respuesta a:\\
-¿Qué valor estamos entregando a nuestros clientes?\\
-¿Qué problema resolvemos?\\
-¿Cuál es la necesidad que satisfacemos?\\
-¿Qué tipo de producto ofrecemos?\\\\
-\textbf{3. Canales}\\
-Una vez definidos nuestros clientes y la propuesta de valor que les ofrecemos, tenemos que llegar a ellos. Si no nos conocen, no nos van a comprar. Aquí vamos a definir los canales de distribución del producto o servicio.\\\\
-Debemos dar respuesta a:\\
-¿Con qué canales podemos llegar a nuestros clientes?\\
-¿Qué canales funcionan mejor?\\
-¿Cuáles de estos canales son los más rentables?\\\\
-\textbf{4. Relación con los clientes}\\
-Debemos comunicarnos correctamente con nuestros clientes y estar pendiente de ellos. Ellos son nuestro eje central, por lo que saber definir la relación que vamos a tener con cada segmento de clientes, es fundamental para el éxito de un negocio.\\\\
-Debemos dar respuesta a:\\
-¿Cuál es la relación que tenemos con cada uno de nuestros segmentos de clientes?\\
-¿Qué tipo de relación esperan?\\
-¿Qué coste tiene?\\\\
-\textbf{5. Flujo de ingresos}\\
-Para que un negocio sea rentable y podamos sobrevivir en el mercado, tenemos que pensar ¿Cómo monetizarlo? Es decir ¿De dónde vamos a obtener la facturación?\\\\
-Debemos dar respuesta a:\\
-¿Cuál es nuestra principal línea de ingresos? \\
-¿Cómo pagarán nuestros clientes?\\
-¿Por qué están dispuestos a pagar nuestros clientes?\\\\
-\textbf{6. Recursos clave}
-Conocer con qué recursos contamos y con los que debemos contar para llevar a cabo la actividad de nuestro negocio, es clave a la hora de establecer el plan de negocios. Debemos de ser cautos y prudentes a la hora de definir estos recursos. Siempre debemos pensar en la forma de optimizarlos, es decir, intentar conseguir la máxima productividad posible al mínimo coste.\\\\
-Debemos dar respuesta a:\\
-¿Qué recursos esenciales requiere nuestra propuesta de valor?\\\\
-\textbf{7. Actividades clave}\\
-Para llevar a cabo la propuesta de valor que queremos ofrecer a nuestros clientes, son necesarias ciertas actividades para preparar el producto antes de que llegue al mercado. Es decir, aquí pensamos en el core de nuestro negocio, lo que haremos en nuestro día a día.\\\\
-Debemos dar respuesta a:\\
-¿Qué actividad básica requiere nuestra propuesta de valor?\\
-¿Cuáles son nuestros canales?\\
-¿Cuáles son nuestras fuentes de ingresos?\\\\
-\textbf{8. Aliados clave}\\
-Para llevar a cabo un negocio, es imprescindible tener aliados. Estos aliados pueden ser;\\\\
-Una serie de socios/colaboradores: una buena red de partners nos pueden ayudar a llegar más rápido al cliente, a ir avalados por su reputación y experiencia.\\
-Los proveedores: aquellos que nos proporcionan los recursos clave para poder ofrecer los servicios/producto final.\\\\
-Debemos dar respuesta a:\\
-¿Quiénes son nuestros socios clave en el mercado?\\
-¿Quiénes son nuestros proveedores?\\
-\textbf{9. Estructura de costes}\\
-Obviamente, toda esta infraestructura tiene unos costes que debemos pagar y optimizar. Debemos definir cuáles son nuestras prioridades y los gastos fundamentales en el negocio de aquellos que no lo son.\\
-Tener bien clara esta estructura nos ayudará a no desviarnos de los presupuestos y que el negocio fracase por problemas de financiación.\\\\
-Debemos dar respuesta a:\\\\
-¿Cuáles son los costes más importantes dentro de nuestro modelo de negocio?\\
-¿Qué recursos clave son los más costosos?\\
-¿Qué actividades clave son las más costosas?\\
+En esta tarea se proporciona, a una gran comunidad de usuarios una forma más estructurada y por lo tanto, más fácil, de acceder al almacén de datos. Se proporciona este acceso estructurado a través de lo que llamamos, aplicaciones de inteligencia de negocios (Business Intelligence Aplications). Las aplicaciones de BI son la cara visible de la inteligencia de negocios: los informes y aplicaciones de análisis proporcionan información útil a los usuarios. Las aplicaciones de BI incluyen un amplio espectro de tipos de informes y herramientas de análisis, que van desde informes simples de formato fijo, a sofisticadas aplicaciones analíticas que usan complejos algoritmos e información del dominio. Kimball divide a estas aplicaciones en dos categorías basadas en el nivel de sofisticación, y les llama:
+a)	Informes estándar: son informes relativamente simples, de formato predefinido, y parámetros de consulta fijos, proporcionan a los usuarios un conjunto básico de información acerca de lo que está sucediendo en un área determinada de la empresa y se utilizan día a día.
+b)	Aplicaciones analíticas: Son más complejas que los informes estándar. Estas aplicaciones pueden incluir algoritmos y modelos de minería de datos, que ayudan a identificar oportunidades o cuestiones subyacentes en los datos, y el usuario puede pedir cambios en los sistemas transaccionales basándose en los conocimientos obtenidos del uso de la aplicación de BI. Algunas aplicaciones analíticas comunes incluyen:\\
+
+•	Análisis de la eficacia de la promoción\\
+•	Análisis de rutas de acceso en un sitio Web\\
+•	Análisis de afinidad de programas\\
+•	Planificación del espacio en espacios comerciales\\\\
+•	Detección de fraudes\\
+•	Administración y manejo de categorías de productos\\
+Por último, en el camino superior, encontramos las tareas asociadas al área Tecnología en esta ruta, se encuentran las tareas relacionadas con software específico, por ejemplo, Microsoft SQL Analysis Services, etc. Las tareas pertenecientes al área se describen a continuación
 }
 \begin{center}
 \includegraphics[width=15cm]{./Imagenes/imagen4}
 \end{center}
 
-\section{Ventajas}
-\item{-Simplicidad de interpretación. la distribucion organizada de los  9 elementos permite dicha simplicidad.\\
--Enfoque integral y sistémico. la interpretación de todos los elementos hace mas visible cualquier posible incoherencia.\\
--Cambios y repercusiones. El analisis de cada alternativa nos permite tantear la viabilidad de cambios.\\
--Cualquier tamaño, cualquier actividad. Es un modelo aplicable a todo tipo de negocio, con independencia de su objeto y de su cifra de negocio.\\
--Sinergia y trabajo en equipo. La simplicidad del método, facilita la generación de ideas y distintos aportes de un grupo de personas que se reúna para desarrollarlo. \\
--Análisis estratégico en una hoja. Poderosa herramienta para el análisis estratégico: FODA, análisis del mercado, competidores, clientes, proveedores, estructuras y procesos.
+\section{DISEÑO DE LA ARQUITECTURA TÉCNICA}
+\item{El área de arquitectura técnica cubre los procesos y herramientas que se aplican a los datos. En el área técnica existen dos conjuntos que tienen distintos requerimientos, brindan sus propios servicios y componentes de almacenaje de datos, por lo que se consideran cada uno aparte: El back room (habitación trasera) y el front room (habitación frontal). El back room es el responsable de la obtención y preparación de los datos, por lo que también se conoce como adquisición de datos y el front room es responsable de entregar los datos a la comunidad de usuario y también se le conoce como acceso de datos.
 }
 
-\section{Desventajas}
+\section{COMPARATIVA ENTRE INMON Y KIMBALL}
 \item{
 Poco precisa, no sirve para operativa concreta.\\
 Se debe complementar con mapa de procesos detallados.\\
 Por ser tan novedosa puede hacernos creer que completando el lienzo ya tenemos el modelo resuelto}
 
+\begin{center}
+\includegraphics[width=15cm]{./Imagenes/image014}
+\end{center}
+
+\begin{center}
+\includegraphics[width=15cm]{./Imagenes/image015}
+\end{center}
+
+\begin{center}
+\includegraphics[width=15cm]{./Imagenes/image016}
+\end{center}
+
+\begin{center}
+\includegraphics[width=15cm]{./Imagenes/image017}
+\end{center}
+\begin{center}
+\includegraphics[width=15cm]{./Imagenes/image018}
+\end{center}
+
+\newpage
 % Bibliografía.
 %-----------------------------------------------------------------
 \begin{thebibliography}{99}
@@ -182,3 +223,4 @@ https://www.adaptiveus.com/balanced-scorecard-vs-business-model-canvas/\\
 \end{thebibliography}
 
 \end{document}
+
